@@ -1,0 +1,12 @@
+app_name: oasis-api
+deployment_config: oasis-api
+host: api.oasis.com
+docker_registry: registry.jhidalgo3.me:444
+commit: '{{shell "git" "rev-parse" "--short" "HEAD"}}'
+branch: '{{.BRANCH_NAME}}'
+docker_image: '{{.docker_registry}}/{{.app_name}}/{{.branch}}:{{commit}}'
+configmap_name: oasis-api
+configmap_path: '/config/'
+config_file: '/config/hamacapp_config.yml'
+volume_name: oasis-api
+volume_path: '/uploads'

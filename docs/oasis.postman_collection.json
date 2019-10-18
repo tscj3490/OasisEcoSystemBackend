@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "22a72cb9-3c05-4258-b7f4-8e0dae07b3ca",
+		"name": "OASIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "/api/users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/api/users/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						},
+						"description": "Returns all the users in the database"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@testing.com\",\n\t\"firstName\": \"Test\",\n\t\"lastName\": \"Testing\",\n\t\"password\": \"test\",\n\t\"role\": \"ROLE_TEST\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/users/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						},
+						"description": "Creates a user in the database"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "/api/files",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/files/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"files",
+								""
+							]
+						},
+						"description": "Uploads a file and return the file data"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/files/:fileId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/files/daccf5e3-d5ec-4066-99f9-a979bd900020",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"files",
+								"daccf5e3-d5ec-4066-99f9-a979bd900020"
+							]
+						},
+						"description": "Uploads a file and return the file data"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/me",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{server}}/api/me",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/authenticate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "74ff4375-2a6f-4063-a408-eac0c0ae52cd",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"postman.setEnvironmentVariable(\"token\", data.token);",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"maria@example.com\",\n\t\"password\": \"oasys\"\n}"
+				},
+				"url": {
+					"raw": "{{server}}/api/authenticate/",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"authenticate",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

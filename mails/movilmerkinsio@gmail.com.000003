@@ -1,0 +1,57 @@
+Mime-Version: 1.0
+Date: Tue, 31 Jul 2018 18:58:10 +0200
+From: sender@sample.com
+Subject: =?UTF-8?q?Recuperar_contrase=C3=B1a?=
+To: "" <movilmerkinsio@gmail.com>
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE html>
+<html style=3D"height: 100%;">
+
+<head>
+  <meta charset=3D"UTF-8">
+  <title>Emailing Oasis</title>
+  <meta charset=3D"UTF-8">
+</head>
+
+<body style=3D"height: 100%;padding: 0;margin: 0;font-family: Arial, sans-s=
+erif;color: #333;">
+	<table class=3D"content" style=3D"background-color: #e5e5e5;width: 100%;he=
+ight: 100%;">
+		<tr>
+			<td>
+				<table class=3D"mail" cellspacing=3D"0" cellpadding=3D"10" style=3D"bac=
+kground-color: #fff;text-align: center;max-width: 600px;margin: auto;width:=
+ 100%;">
+					<tr class=3D"logo" style=3D"background-color: #E7AB5A;">
+						<td><img src=3D"https://oasis-dashboard.merkins.io/images/logo-bla=
+nco.png" width=3D"300"></td>
+					</tr>
+					<tr>
+						<td class=3D"textos" style=3D"padding: 0 60px;">
+               =20
+
+<p style=3D"font-size: 14px;margin: 20px 0;">Puede usar este enlace para re=
+cuperar su contrase=C3=B1a:</p>
+<a href=3D"oasis://passwordRecovery/6cf20058-8d86-4c16-bac4-44e993911dda=
+" style=3D"font-size: 20px;margin: 20px 0;background-color: #CED3DB;padding=
+: 20px;display: inline-block;">Enlace</a>
+
+						</td>
+					</tr>
+					<tr class=3D"logo" style=3D"background-color: #E7AB5A;">
+						<td>
+							<b style=3D"font-size: 11px;margin: 20px 0;color: #fff;">Oasis 20=
+18 =C2=A9 Andaluc=C3=ADa</b>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+
+
+</html>

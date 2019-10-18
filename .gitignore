@@ -1,0 +1,12 @@
+# Avoid go dependencies in src
+src/*
+!src/com/
+
+# Other
+vendor/
+pkg/
+bin/
+src/com/merkinsio/oasis-api/oasis-api
+src/com/merkinsio/oasis-api/debug
+docs/import/*/.~lock.*
+distYaml/

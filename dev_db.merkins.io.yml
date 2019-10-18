@@ -1,0 +1,15 @@
+server:
+       port: 4040
+       baseUrl: localhost
+database:
+       url: mongodb://user:p4ssw0rd;@pre.merkins.io:27036/oasis-dev
+uploads:
+       path: /uploads
+mail:
+       host: localhost
+       port: 2500
+       sender: sender@sample.com
+       user:
+       password:
+app:
+       version: "5"

@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: {{.app_name}}
+    kubernetes.io/cluster-service: "true"
+    kubernetes.io/name: {{.app_name}}
+  name: {{.deployment_config}}
+spec:
+  replicas: 1
+  
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        k8s-app: {{.app_name}}
+        deploymentconfig: {{.deployment_config}}
+    spec:
+      volumes:
+        - name: {{.configmap_name}}
+          configMap:
+            name: {{.configmap_name}}
+        - name: {{.volume_name}}
+          persistentVolumeClaim:
+            claimName: {{.volume_name}}
+      containers:
+        - image: {{.docker_image}}
+          name: {{.deployment_config}}
+          imagePullPolicy: Always
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          ports:
+          - containerPort: 4040
+            name: http
+            protocol: TCP
+          env:
+            - name: CONFIG_FILE
+              value: {{.config_file}}
+          volumeMounts:
+            - name: {{.configmap_name}}
+              mountPath: {{.configmap_path}}
+            - name: {{.volume_name}}
+              mountPath: {{.volume_path}}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      imagePullSecrets:
+        - name: registry.jhidalgo3.me

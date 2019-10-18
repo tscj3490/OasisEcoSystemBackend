@@ -1,0 +1,14 @@
+server:
+       port: 4040
+       baseUrl: localhost
+database:
+       url: mongodb://root:root@localhost:3306/oasis
+       user: root
+       password: root
+       host: localhost
+       port: 27017
+       name: oasis
+uploads:
+       path: /tmp
+app:
+       version: "5"

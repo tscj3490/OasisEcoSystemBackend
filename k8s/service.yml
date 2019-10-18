@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{.deployment_config}}
+spec:
+  ports:
+  - name: http
+    port: 4040
+    targetPort: 4040
+  selector:
+    k8s-app: {{.app_name}}

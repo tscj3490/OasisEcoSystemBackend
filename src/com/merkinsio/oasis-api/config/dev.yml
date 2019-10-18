@@ -1,0 +1,27 @@
+server:
+       port: 4040
+       baseUrl: localhost:4040/api
+database:
+       url: mongodb://localhost:27017/oasis
+       user: root
+       password: root
+       host: localhost
+       port: 27017
+       name: oasis
+uploads:
+       path: /tmp
+mail:
+       host: localhost
+       port: 2500
+       sender: sender@sample.com
+       user:
+       password:
+environment: development
+redsys:
+       signatureKey: sq7HjrUOBfKmC576ILgskD5srU870gJ7
+       merchantCode: 337010490
+http:
+      origin: http://localhost:4040
+app:
+      version: ""
+bookingExpirationMinutes: 10
